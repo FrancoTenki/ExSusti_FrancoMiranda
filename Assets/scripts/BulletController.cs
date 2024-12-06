@@ -31,7 +31,7 @@ public class BulletController : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
 
-            gameManager.GetComponent<GameManagerController>().ReduceBullets();
+            // gameManager.GetComponent<GameManagerController>().ReduceBullets();
         }
     }
 }

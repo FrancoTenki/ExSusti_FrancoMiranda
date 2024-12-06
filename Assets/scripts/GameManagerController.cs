@@ -26,16 +26,7 @@ public class GameManagerController : MonoBehaviour
     public void RemoveLife()
     {
         gData.Life-=10;
-        gDataRepository.SaveGame(gData);
-
-        if(gData.Life<=0){
-            // Destroy(play);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
-            gData.Life=10;
-            gData.NumBullets=5;
-            gDataRepository.SaveGame(gData);
-        }
+        gDataRepository.SaveGame(gData);        
     }
     public int getBullets()
     {
@@ -44,6 +35,12 @@ public class GameManagerController : MonoBehaviour
     public int getLife()
     {
         return gData.Life;
+    }
+    public void ResetGame(){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gData.Life=10;
+            gData.NumBullets=5;
+            gDataRepository.SaveGame(gData);
     }
     
     void Update()
